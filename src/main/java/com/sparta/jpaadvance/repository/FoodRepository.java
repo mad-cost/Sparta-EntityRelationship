@@ -1,6 +1,6 @@
 package com.sparta.jpaadvance.repository;
 
-import com.sparta.jpaadvance.Food;
+import com.sparta.jpaadvance.entity.Food;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

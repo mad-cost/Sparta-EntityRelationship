@@ -19,8 +19,13 @@ public class User {
 
   // 지연 로딩 (N:1)
   // @OneToMany는 default가 LAZY(지연 로딩)이다
-  @OneToMany(mappedBy = "user")
+  @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
   private List<Food> foodList = new ArrayList<>();
+
+  public void addFoodList(Food food) {
+    this.foodList.add(food);
+    food.setUser(this); // 외래 키 설정
+  }
 
 
 //  N:M 관계의 중간 테이블 Order 사용

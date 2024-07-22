@@ -19,7 +19,7 @@ public class User {
 
   // 지연 로딩 (N:1)
   // @OneToMany는 default가 LAZY(지연 로딩)이다
-  @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+  @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
   private List<Food> foodList = new ArrayList<>();
 
   public void addFoodList(Food food) {

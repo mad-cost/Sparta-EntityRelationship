@@ -17,6 +17,13 @@ public class User {
   private Long id;
   private String name;
 
+  // 지연 로딩 (N:1)
+  // @OneToMany는 default가 LAZY(지연 로딩)이다
   @OneToMany(mappedBy = "user")
-  private List<Order> orderList = new ArrayList<>();
+  private List<Food> foodList = new ArrayList<>();
+
+
+//  N:M 관계의 중간 테이블 Order 사용
+  //@OneToMany(mappedBy = "user")
+  //private List<Order> orderList = new ArrayList<>();
 }

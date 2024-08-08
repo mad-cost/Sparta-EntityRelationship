@@ -28,6 +28,9 @@ public class ManyToOneTest {
     User user = new User();
     user.setName("Robbie");
 
+    User user2 = new User();
+    user2.setName("Brad");
+
     Food food = new Food();
     food.setName("후라이드 치킨");
     food.setPrice(15000);
@@ -41,6 +44,17 @@ public class ManyToOneTest {
     userRepository.save(user);
     foodRepository.save(food);
     foodRepository.save(food2);
+
+    // 수업 외의 추가 내용
+    Food food3 = new Food();
+    food3.setName("양념 치킨");
+    food3.setPrice(20000);
+    food3.setUser(user2);
+
+    food3.setUser(user2);
+    userRepository.save(user2);
+    foodRepository.save(food3);
+
   }
 
 
